@@ -1,0 +1,33 @@
+{
+  "name": "zoom-app",
+  "version": "1.0.0",
+  "description": "Premium Screen Recorder with AI Meeting Notes",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"vite --port 5200\" \"npm run electron:dev\"",
+    "electron:dev": "wait-on tcp:5200 && tsc -p tsconfig.electron.json && cross-env VITE_DEV_SERVER_URL=http://localhost:5200 node start-electron.js",
+    "build": "vite build && tsc -p tsconfig.electron.json",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "clsx": "^2.1.0",
+    "lucide-react": "^0.344.0",
+    "openai": "^4.28.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^10.1.0",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4",
+    "wait-on": "^7.2.0"
+  }
+}

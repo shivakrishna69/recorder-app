@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-electron/
+out/
+*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
